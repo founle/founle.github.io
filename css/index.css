@@ -1,8 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 body{
-	background-color: #eef7e6;
+	/*background-color: #eef7e6;*/
 	/*background-image: url("../img/bg2.jpeg");*/
+	background: linear-gradient(to bottom, #9092ff 1%,lightcoral 70%, #46faf2 100%);
 	background-attachment: fixed;
 }
 a{
@@ -25,7 +26,7 @@ a:hover{
 /*header系列*/
 header{
 	min-height: 60px;
-	background-color: #ffffff;
+	background: #ffffff;
 	line-height: 30px;
 	margin:0 6px;
 	box-shadow: 0 0 6px 1px rgba(0, 0, 0,0.3);
@@ -75,7 +76,7 @@ header{
     height: 26px;
     border-radius: 18px;
     outline: none;
-    border: 1px solid rgba(12, 138, 255, 0.64);
+    border: 1px solid rgba(0, 215, 202, 0.64);
     padding-left: 20px;
     position: absolute;
 }
