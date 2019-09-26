@@ -171,7 +171,7 @@
 							indexes += '<h5><a href=#' + index.eq(i).attr('id') + '>' + index.eq(i).text() + '</a></h5>';
 						}
 						$('#index').html(indexes);
-						},1000);
+						},20);
 				});
 			</script>
 			<div id="message">
@@ -250,27 +250,32 @@
 			});
 
 		</script>
-<!--		<script>-->
-<!--			$(function () {-->
-<!--				if($(window).width()<1000){-->
-<!--					$('#div1').hide()-->
-<!--					$('#div2').css({width:"100%"})-->
-<!--					$('header').css({height:"110px"})-->
-<!--				};-->
-<!--			})-->
-<!--		</script>-->
 		<script>
-			// setTimeout(function(){
-			// 	$('#context').text($('#test-editormd-view p').eq(0).text());
-			// 	var index =$('#test-editormd-view h2');
-			// 	indexes="";
-			// 	for(i=0;i<index.length;i++){
-			// 		indexes+='<h5><a href=#'+index.eq(i).attr('id')+'>'+index.eq(i).text()+'</a></h5>';
-			// 	}
-			// 	$('#index').html(indexes);
-			// 	},200);
-
+			$(window).on("resize",function () {
+				if($(window).width()<1000){
+					$('#div1').hide();
+					$('#div2').css({width:"100%"})
+					$('header').css({height:"110px"})
+				}
+				else{
+					$('#div1').show();
+					$('#div2').css({width:"80%"})
+					$('header').css({height:"55px"})
+				}
+			})
 		</script>
+<!--		<script>-->
+<!--			// setTimeout(function(){-->
+<!--			// 	$('#context').text($('#test-editormd-view p').eq(0).text());-->
+<!--			// 	var index =$('#test-editormd-view h2');-->
+<!--			// 	indexes="";-->
+<!--			// 	for(i=0;i<index.length;i++){-->
+<!--			// 		indexes+='<h5><a href=#'+index.eq(i).attr('id')+'>'+index.eq(i).text()+'</a></h5>';-->
+<!--			// 	}-->
+<!--			// 	$('#index').html(indexes);-->
+<!--			// 	},200);-->
+
+<!--		</script>-->
 		<script>
 			// $(window).bind('beforeunload', function () {
 			// 		// $("#div1").css({ position : 'static',top : "",width:'19%'});
