@@ -163,6 +163,15 @@
 							sequenceDiagram : true,  // 默认不解析
 						});
 					});
+					setTimeout(function(){
+						$('#context').text($('#test-editormd-view p').eq(0).text());
+						var index = $('#test-editormd-view h2');
+						indexes = "";
+						for (i = 0; i < index.length; i++) {
+							indexes += '<h5><a href=#' + index.eq(i).attr('id') + '>' + index.eq(i).text() + '</a></h5>';
+						}
+						$('#index').html(indexes);
+						},20);
 				});
 			</script>
 			<div id="message">
@@ -251,15 +260,15 @@
 <!--			})-->
 <!--		</script>-->
 		<script>
-			setTimeout(function(){
-				$('#context').text($('#test-editormd-view p').eq(0).text());
-				var index =$('#test-editormd-view h2');
-				indexes="";
-				for(i=0;i<index.length;i++){
-					indexes+='<h5><a href=#'+index.eq(i).attr('id')+'>'+index.eq(i).text()+'</a></h5>';
-				}
-				$('#index').html(indexes);
-				},200);
+			// setTimeout(function(){
+			// 	$('#context').text($('#test-editormd-view p').eq(0).text());
+			// 	var index =$('#test-editormd-view h2');
+			// 	indexes="";
+			// 	for(i=0;i<index.length;i++){
+			// 		indexes+='<h5><a href=#'+index.eq(i).attr('id')+'>'+index.eq(i).text()+'</a></h5>';
+			// 	}
+			// 	$('#index').html(indexes);
+			// 	},200);
 
 		</script>
 		<script>
