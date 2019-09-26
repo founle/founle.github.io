@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>blog</title>
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/editormd.min.css" />
+		<script src="js/jquery-3.4.1.min.js"></script>
+
+
+	</head>
+<body>
+	<div id="div0">
+		<header>
+		<ul class="header_left">
+			<li class="li">
+				<a href="#"><h2><b><span style="color: #00c4ff">lala</span>'s blog</b></h2></a>
+			</li>
+			<li class="li">
+				<a href="#">首页</a>
+			</li>
+			<li class="li">
+				<a href="#">博客</a>
+			</li>
+			<li class="li">
+				<a href="#">系列</a>
+			</li>
+			<li class="li">
+				<a href="#">关于</a>
+			</li>
+		</ul>
+
+		<ul class="header_right">
+			<li class="li">
+				<div class="container">
+		    		<form action="" class="parent">
+		        		<input type="text" class="search" placeholder="搜索">
+		        		<input type="button" name="" id="" class="btn">
+		   			 </form>
+				</div>
+
+			</li>
+			<li class="li">
+				<a href="#">消息</a>
+			</li>
+			<li class="li">
+				<a href="#">写博客</a>
+			</li>
+			<li class="li">
+				<div class="dropdown">
+				  <img src="img/user.jpg" alt="用户头像" width="20" height="20" style="border-radius: 100%" >
+  					<div class="dropdown-content">
+						<ul>
+							<li class="li">
+								<a href="#">我的账户</a>
+							</li>
+							<li class="li">
+								<a href="#">我的文章</a>
+							</li>
+							<li class="li">
+								<a href="#">我的收藏</a>
+							</li>
+							<li class="li">
+								<a href="#">退出</a>
+							</li>
+						</ul>
+  					</div>
+				</div>
+			</li>
+		</ul>
+
+	</header>
+
+		<aside id="div1">
+			<div class="aside" id="blogger">
+				<center><h3>博主简介</h3></center>
+				<img src="img/user.jpg" alt="用户头像" width="50" height="50" >
+			</div>
+			<div class="aside" id="blogabout">
+				<center><h3>文章简介</h3></center>
+				<div id="context"></div>
+			</div>
+			<div class="aside">
+
+				<center><h3>章节</h3></center>
+				<div id="index"></div>
+			</div>
+			<div class="aside">
+
+				<center><h3>系列文章</h3></center>
+				<ul>
+					<li>
+						<a href="#h2-cuda-">文章1</a>
+					</li>
+					<li>
+						<a href="#">文章2</a>
+					</li>
+					<li>
+						<a href="#">文章3</a>
+					</li>
+					<li>
+						<a href="#">文章4</a>
+					</li>
+					<li>
+						<a href="#">文章5</a>
+					</li>
+				</ul>
+			</div>
+			<div class="aside">
+				<center><h3>最新文章</h3></center>
+				<ul>
+					<li>
+						<a href="#">文章1</a>
+					</li>
+					<li>
+						<a href="#">文章2</a>
+					</li>
+					<li>
+						<a href="#">文章3</a>
+					</li>
+					<li>
+						<a href="#">文章4</a>
+					</li>
+					<li>
+						<a href="#">文章5</a>
+					</li>
+				</ul>
+			</div>
+
+
+		</aside>
+
+		<div id="div2">
+			<!--	md显示器-->
+				<div style="width: auto" id="test-editormd-view">
+				   <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>
+				</div>
+
+			<script src="js/marked.min.js"></script>
+			<script src="js/prettify.min.js"></script>
+
+			<script src="js/raphael.min.js"></script>
+			<script src="js/underscore.min.js"></script>
+			<script src="js/sequence-diagram.min.js"></script>
+			<script src="js/flowchart.min.js"></script>
+			<script src="js/jquery.flowchart.min.js"></script>
+
+			<script src="js/editormd.min.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					var testEditormdView;
+					//可以加入模板引擎或是访问query动态传入view的md文档
+					$.get("mdfile/tf2b.md",function(data)
+					{
+						var content=data;
+						$("#test-editormd-view textarea").text(content);
+						testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+							htmlDecode      : "style,script,iframe",  // you can filter tags decode
+							emoji           : true,
+							taskList        : true,
+							tex             : true,  // 默认不解析
+							flowChart       : true,  // 默认不解析
+							sequenceDiagram : true,  // 默认不解析
+						});
+					});
+				});
+			</script>
+			<div id="message">
+				留言
+			</div>
+			<footer>
+					Disign by founle @founle.com © 2019
+			</footer>
+		</div>
+
+	</div>
+
+
+	<!--	文明富强-->
+		<script>
+			$(function () {
+				var txt = "<span class='txt'></span>";
+				$('body').append(txt);
+
+				var Animated = function (x) {
+					x.stop().animate({
+						top: "-=80px",
+						opacity: '1'
+					}, 500, function () {
+						$(this).animate({
+							opacity: "0"
+						}, 500);
+					});
+				};
+				$(document).on("click", function (e) {
+					var txted = $(".txt");
+					var red = parseInt(Math.random()*257).toString(16);
+					var blue = parseInt(Math.random()*257).toString(16);
+					var green= parseInt(Math.random()*257).toString(16);
+
+					var color = '#'+red+blue+green;
+					txted.css({
+						position: "absolute",
+						color: color
+					});
+					var attr = ["富强","民主","文明","和谐","自由","平等","公正","法治","爱国","敬业","诚信","友善"];
+					var mathText = attr[Math.floor(Math.random() * attr.length)];
+					//获取鼠标的位置
+					var x = e.pageX - 32 + "px";
+					var y = e.pageY - 18 + "px";
+					txted.text(mathText);
+					txted.css({
+						"left": x,
+						"top": y
+					});
+					Animated(txted);
+				});
+			});
+		</script>
+
+
+		<script>
+			$(document).scroll( function(){
+				var me = arguments.callee; //匿名函数可以 通过 arguments.callee 调用自己
+				me.doc = me.doc || $(document); //缓存 $(document);
+				me.head = me.head || $('#div1');
+				me.lastTop = me.lastTop || me.doc.scrollTop();
+				if( me.doc.scrollTop() > 330 ){
+					//向下 或再 页面顶部，放在 头部
+					me.head.css({ position : 'fixed' ,top : 0,width:'19%'});
+					$('#blogabout').css({margin:"0 6px 15px 6px"});
+					$('#blogger').hide()
+				}else if( me.doc.scrollTop() < me.lastTop  ){
+					//向上，悬浮
+					me.head.css({ position : 'static',top : "",width:'20%'});
+					$('#blogabout').css({margin:"15px 6px"})
+					$('#blogger').show()
+				}
+				me.lastTop = me.doc.scrollTop();
+
+			});
+
+		</script>
+<!--		<script>-->
+<!--			$(function () {-->
+<!--				if($(window).width()<1000){-->
+<!--					$('#div1').hide()-->
+<!--					$('#div2').css({width:"100%"})-->
+<!--					$('header').css({height:"110px"})-->
+<!--				};-->
+<!--			})-->
+<!--		</script>-->
+		<script>
+			setTimeout(function(){
+				$('#context').text($('#test-editormd-view p').eq(0).text());
+				var index =$('#test-editormd-view h2');
+				indexes="";
+				for(i=0;i<index.length;i++){
+					indexes+='<h5><a href=#'+index.eq(i).attr('id')+'>'+index.eq(i).text()+'</a></h5>';
+				}
+				$('#index').html(indexes);
+				},200);
+
+		</script>
+		<script>
+			// $(window).bind('beforeunload', function () {
+			// 		// $("#div1").css({ position : 'static',top : "",width:'19%'});
+			// 	alert(555555)
+			// 	});
+
+
+			window.onbeforeunload = function(){
+
+			//响应事件
+			alert("获取到了页面要关闭的事件了！");
+			};
+		</script>
+
+</body>
+</html>
