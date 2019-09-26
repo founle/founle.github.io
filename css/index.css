@@ -110,8 +110,12 @@ header{
 	width: 20%;
 	height: 100%;
 	float: left;
-	overflow:auto;
+	/*overflow:auto;*/
+	overflow-y: auto;
 }
+#div1::-webkit-scrollbar {
+        display: none;/*隐藏滚动条*/
+    }
 .div1list{
 	padding: 20px;
 }
@@ -126,6 +130,9 @@ header{
 	/*box-shadow: 0 0 6px 0 rgba(0,0,0,.3);*/
 	overflow: auto;
 }
+#div2::-webkit-scrollbar {
+        display: none;/*隐藏滚动条*/
+    }
 
 .aside{
 	background-color: #FFFFFF;
